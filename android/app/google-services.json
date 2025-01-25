@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "324725989859",
+    "project_id": "online-shop-admin-d07af",
+    "storage_bucket": "online-shop-admin-d07af.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324725989859:android:ccd9ecfa72bf8ce7dbc0d6",
+        "android_client_info": {
+          "package_name": "com.example.admin_dashboard_online_shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwfSav2a2v30pSK3g10rpXvmpW-EdxO00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324725989859:android:8ebb8c981b72ce52dbc0d6",
+        "android_client_info": {
+          "package_name": "com.example.user_online_shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwfSav2a2v30pSK3g10rpXvmpW-EdxO00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
