@@ -572,11 +572,31 @@ class S {
     );
   }
 
+  /// `Edit Email`
+  String get edit_email {
+    return Intl.message(
+      'Edit Email',
+      name: 'edit_email',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Change Password`
   String get change_password {
     return Intl.message(
       'Change Password',
       name: 'change_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Become Seller`
+  String get become_seller {
+    return Intl.message(
+      'Become Seller',
+      name: 'become_seller',
       desc: '',
       args: [],
     );

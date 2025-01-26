@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/become_seller.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/chang_password/change_password_view.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/edit_email_view.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/edit_profile/edit_profile_view.dart';
 import 'package:user_online_shop/generated/l10n.dart';
 import 'package:user_online_shop/core/widgets/custom_listtile.dart';
@@ -34,6 +36,15 @@ class CustomProfileItem extends StatelessWidget {
             },
           ),
           CustomListTile(
+            title: S.of(context).edit_email,
+            icon: Icons.email_outlined,
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                EditEmailView.routeName,
+              );
+            },
+          ),
+          CustomListTile(
             title: S.of(context).change_password,
             icon: Icons.lock_outline,
             onTap: () {
@@ -43,8 +54,13 @@ class CustomProfileItem extends StatelessWidget {
             },
           ),
           CustomListTile(
-            title: 'Become a seller',
+            title: S.of(context).become_seller,
             icon: Icons.store_outlined,
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                SellerRequestView.routeName,
+              );
+            },
           ),
           const CustomChangeThemeItem(),
           const CustomChangeLangItem(),

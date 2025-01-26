@@ -55,7 +55,9 @@
     "change_theme": "Change Theme",
     "change_language": "Change Language",
     "edit_profile": "Edit Profile",
+    "edit_email": "Edit Email",
     "change_password": "Change Password",
+    "become_seller": "Become Seller",
     "logout": "Logout",
 
     "dark_mode": "Dark Mode",

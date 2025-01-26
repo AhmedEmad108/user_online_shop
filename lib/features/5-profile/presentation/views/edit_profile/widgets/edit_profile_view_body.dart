@@ -23,27 +23,28 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
   UserEntity user2 = getUser();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
-  TextEditingController email = TextEditingController();
   TextEditingController userName = TextEditingController();
   TextEditingController phone = TextEditingController();
+  TextEditingController address = TextEditingController();
+
   // late String email, password, confirmPassword, userName, phone;
   String? urlImage;
 
   @override
   void initState() {
-    email.text = user2.email;
     userName.text = user2.name;
     phone.text = user2.phone;
     urlImage = user2.image;
-    
+    address.text = user2.address;
+
     super.initState();
   }
 
   @override
   void dispose() {
-    email.dispose();
     userName.dispose();
     phone.dispose();
+    address.dispose();
     super.dispose();
   }
 
@@ -90,28 +91,6 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                 height: 16,
               ),
               CustomTextField(
-                hintText: S.of(context).enter_email,
-                labels: S.of(context).email,
-                controller: email,
-                onSaved: (value) {
-                  email.text = value!;
-                },
-                validator: (value) {
-                  return validInput(
-                    context: context,
-                    val: value!,
-                    type: 'email',
-                    max: 30,
-                    min: 5,
-                  );
-                },
-                keyboardType: TextInputType.emailAddress,
-                suffixIcon: const Icon(Icons.email_outlined),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              CustomTextField(
                 hintText: S.of(context).enter_phone,
                 labels: S.of(context).phone,
                 controller: phone,
@@ -133,6 +112,26 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
               const SizedBox(
                 height: 16,
               ),
+              CustomTextField(
+                hintText: S.of(context).enter_address,
+                labels: S.of(context).address,
+                controller: address,
+                onSaved: (value) {
+                  address.text = value!;
+                },
+                validator: (value) {
+                  return validInput(
+                    context: context,
+                    val: value!,
+                    type: 'name',
+                    max: 20,
+                    min: 3,
+                  );
+                },
+                keyboardType: TextInputType.streetAddress,
+                suffixIcon: const Icon(Icons.location_on_outlined),
+              ),
+              const SizedBox(height: 16),
               CustomButton(
                 title: S.of(context).edit_profile,
                 buttonColor: AppColor.primaryColor,
@@ -144,7 +143,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                     formKey.currentState!.save();
                     UserEntity user = UserEntity(
                       uId: user2.uId,
-                      email: email.text,
+                      email: user2.email,
                       name: userName.text,
                       phone: phone.text,
                       image: urlImage!,

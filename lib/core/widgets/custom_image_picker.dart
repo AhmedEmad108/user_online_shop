@@ -1,15 +1,17 @@
 import 'dart:io';
 import 'package:user_online_shop/contants.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:user_online_shop/core/services/supabase_storage.dart';
 import 'package:user_online_shop/core/utils/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import 'package:user_online_shop/core/utils/backend_endpoint.dart';
 
 class CustomImagePicker extends StatefulWidget {
   const CustomImagePicker(
       {super.key,
       required this.onFileChanged,
-       this.auth = false,
+      this.auth = false,
       this.urlImage,
       required this.radius,
       this.imageQuality = 50});
@@ -169,9 +171,9 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
               'حجم الصورة كبير جداً. يجب أن يكون أقل من 5 ميجابايت');
         }
 
-        // url = await SupabaseStorageService()
-        //     .uploadFile(file: imageFile!, path: BackendEndpoint.images);
-        // widget.onFileChanged(url);
+        url = await SupabaseStorageService()
+            .uploadFile(file: imageFile!, path: BackendEndpoint.images);
+        widget.onFileChanged(url);
       }
     } catch (e) {
       if (mounted) {

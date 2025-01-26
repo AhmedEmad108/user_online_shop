@@ -3,7 +3,9 @@ import 'package:user_online_shop/features/2-auth/presentation/views/sign_in_view
 import 'package:user_online_shop/features/2-auth/presentation/views/sign_up_view.dart';
 import 'package:user_online_shop/features/3-bottom_nav/presentation/views/main_view.dart';
 import 'package:flutter/material.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/become_seller.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/chang_password/change_password_view.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/edit_email_view.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/edit_profile/edit_profile_view.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/profile_view.dart';
 
@@ -75,8 +77,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     //   );
     case (EditProfileView.routeName):
       return MaterialPageRoute(builder: (context) => EditProfileView());
+    case (EditEmailView.routeName):
+      return MaterialPageRoute(builder: (context) => EditEmailView());
     case (ChangePasswordView.routeName):
       return MaterialPageRoute(builder: (context) => ChangePasswordView());
+    case (SellerRequestView.routeName):
+      return MaterialPageRoute(builder: (context) => SellerRequestView());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }

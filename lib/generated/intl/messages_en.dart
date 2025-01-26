@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+        "become_seller": MessageLookupByLibrary.simpleMessage("Become Seller"),
         "best_selling": MessageLookupByLibrary.simpleMessage("Best Selling"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cant_be_empty": MessageLookupByLibrary.simpleMessage("Cant Be Empty"),
@@ -102,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Don’t have an account?"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "edit_category": MessageLookupByLibrary.simpleMessage("Edit Category"),
+        "edit_email": MessageLookupByLibrary.simpleMessage("Edit Email"),
         "edit_product": MessageLookupByLibrary.simpleMessage("Edit Product"),
         "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),

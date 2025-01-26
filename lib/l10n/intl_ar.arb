@@ -53,7 +53,9 @@
     "gg": "الطلبات",
 
     "edit_profile": "تعديل الملف الشخصي",
+    "edit_email": "تعديل البريد الالكتروني",
     "change_password": "تغيير كلمة المرور",
+    "become_seller": "اصبح مبيع",
     "change_theme": "تغيير التصميم",
     "change_language": "تغيير اللغة",
     "logout": "تسجيل الخروج",

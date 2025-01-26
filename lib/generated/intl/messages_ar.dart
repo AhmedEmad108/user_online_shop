@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
         "arabic": MessageLookupByLibrary.simpleMessage("اللغة العربية"),
+        "become_seller": MessageLookupByLibrary.simpleMessage("اصبح مبيع"),
         "best_selling": MessageLookupByLibrary.simpleMessage("الاكثر مبيعاً"),
         "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
         "cant_be_empty": MessageLookupByLibrary.simpleMessage(
@@ -97,6 +98,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
         "edit_category": MessageLookupByLibrary.simpleMessage("تعديل الفئة"),
+        "edit_email":
+            MessageLookupByLibrary.simpleMessage("تعديل البريد الالكتروني"),
         "edit_product": MessageLookupByLibrary.simpleMessage("تعديل المنتج"),
         "edit_profile":
             MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
