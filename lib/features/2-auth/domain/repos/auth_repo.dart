@@ -33,5 +33,7 @@ abstract class AuthRepo {
     required String currentPassword,
     required String newPassword,
   });
+
+  Future updateUserEmail({required String newEmail});
   Future signOut();
 }

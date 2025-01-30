@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_online_shop/contants.dart';
 import 'package:user_online_shop/core/helper_functions/get_user.dart';
 import 'package:user_online_shop/core/helper_functions/valid_input.dart';
@@ -8,6 +9,7 @@ import 'package:user_online_shop/core/utils/app_style.dart';
 import 'package:user_online_shop/core/widgets/custom_button.dart';
 import 'package:user_online_shop/core/widgets/custom_text_field.dart';
 import 'package:user_online_shop/features/2-auth/domain/entities/user_entity.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/cubit/edit_email_cubit.dart';
 import 'package:user_online_shop/generated/l10n.dart';
 
 class EditEmailViewBody extends StatefulWidget {
@@ -78,17 +80,20 @@ class _EditEmailViewBodyState extends State<EditEmailViewBody> {
                 onTap: () async {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-                    UserEntity user = UserEntity(
-                      uId: user2.uId,
-                      email: emailController.text,
-                      name: user2.name,
-                      phone: user2.phone,
-                      image: user2.image,
-                      address: user2.address,
-                      createdAt: user2.createdAt,
-                      updatedAt: DateTime.now().toIso8601String(),
-                      status: user2.status,
-                    );
+                    context.read<EditEmailCubit>().updateEmail(
+                          newEmail: emailController.text,
+                        );
+                    // UserEntity user = UserEntity(
+                    //   uId: user2.uId,
+                    //   email: emailController.text,
+                    //   name: user2.name,
+                    //   phone: user2.phone,
+                    //   image: user2.image,
+                    //   address: user2.address,
+                    //   createdAt: user2.createdAt,
+                    //   updatedAt: DateTime.now().toIso8601String(),
+                    //   status: user2.status,
+                    // );
                     // context.read<UserCubit>().editUser(
                     //       user: user,
                     //     );

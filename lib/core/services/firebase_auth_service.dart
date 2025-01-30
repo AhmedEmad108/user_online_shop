@@ -176,6 +176,37 @@ class FirebaseAuthService {
       throw CustomException(
           message: 'Something went wrong. Please try again later.');
     }
-
   }
+
+
+Future<void> updateEmail(String newEmail) async {
+  try {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      await user.verifyBeforeUpdateEmail(newEmail);
+      // This will send a verification email to the new email address
+    } else {
+      throw CustomException(message: 'No user is currently signed in.');
+    }
+  } on FirebaseAuthException catch (e) {
+    log('Exception in FirebaseAuthService.updateEmail: ${e.toString()} and code: ${e.code}');
+    if (e.code == 'invalid-email') {
+      throw CustomException(message: 'The email address is not valid.');
+    } else if (e.code == 'email-already-in-use') {
+      throw CustomException(message: 'This email is already registered.');
+    } else if (e.code == 'requires-recent-login') {
+      throw CustomException(
+          message: 'Please log in again before updating your email.');
+    } else if (e.code == 'network-request-failed') {
+      throw CustomException(message: 'Please check your internet connection.');
+    } else {
+      throw CustomException(
+          message: 'Something went wrong. Please try again later.');
+    }
+  } catch (e) {
+    log('Exception in FirebaseAuthService.updateEmail: ${e.toString()}');
+    throw CustomException(
+        message: 'Something went wrong. Please try again later.');
+  }
+}
 }

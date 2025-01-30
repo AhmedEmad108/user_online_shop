@@ -231,4 +231,9 @@ class AuthRepoImpl implements AuthRepo {
     await firebaseAuthService.changePassword(
         currentPassword: currentPassword, newPassword: newPassword);
   }
+
+  @override
+  Future<void> updateUserEmail({required String newEmail}) async {
+    await firebaseAuthService.updateEmail(newEmail);
+  }
 }
