@@ -54,6 +54,7 @@
 
     "edit_profile": "تعديل الملف الشخصي",
     "edit_email": "تعديل البريد الالكتروني",
+    "edit_email_message": "هل انت متاكد من تغيير البريد الالكتروني؟",
     "change_password": "تغيير كلمة المرور",
     "become_seller": "اصبح مبيع",
     "change_theme": "تغيير التصميم",

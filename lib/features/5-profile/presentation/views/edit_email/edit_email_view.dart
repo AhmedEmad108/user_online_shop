@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_online_shop/core/services/get_it.dart';
@@ -8,6 +9,7 @@ import 'package:user_online_shop/core/widgets/custom_dialog.dart';
 import 'package:user_online_shop/core/widgets/loading_dialog.dart';
 import 'package:user_online_shop/core/widgets/show_snackbar.dart';
 import 'package:user_online_shop/features/2-auth/domain/repos/auth_repo.dart';
+import 'package:user_online_shop/features/2-auth/presentation/views/sign_in_view.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/cubit/edit_email_cubit.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/widgets/edit_email_view_body.dart';
 import 'package:user_online_shop/generated/l10n.dart';
@@ -41,14 +43,18 @@ class EditEmailViewBlocConsumer extends StatelessWidget {
     return BlocConsumer<EditEmailCubit, EditEmailState>(
       listener: (context, state) {
         if (state is EditEmailLoading) {
+          Navigator.pop(context);
           loadingDialog(context);
         }
         if (state is EditEmailSuccess) {
           Navigator.pop(context);
-          Navigator.pop(context);
+          FirebaseAuth.instance.signOut().then((value) {
+            Navigator.of(context).pushNamedAndRemoveUntil(
+                SignInView.routeName, (route) => false);
+          });
           showSnackBar(
             context,
-            S.of(context).email,
+            S.of(context).please_verify_your_email,
             AppColor.green,
           );
         }
