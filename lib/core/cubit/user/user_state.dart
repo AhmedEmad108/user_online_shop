@@ -57,6 +57,19 @@ final class SignOutFailed extends UserState {
   SignOutFailed({required this.errMessage});
 }
 
+
+final class ChangeEmailLoading extends UserState {}
+
+final class ChangeEmailSuccess extends UserState {}
+
+final class ChangeEmailFailed extends UserState {
+  final String error;
+
+  ChangeEmailFailed({required this.error});
+
+}
+
+
 // part of 'user_cubit.dart';
 
 // @immutable

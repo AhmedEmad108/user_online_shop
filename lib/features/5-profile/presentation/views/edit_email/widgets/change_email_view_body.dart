@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_online_shop/contants.dart';
+import 'package:user_online_shop/core/cubit/user/user_cubit.dart';
 import 'package:user_online_shop/core/helper_functions/get_user.dart';
 import 'package:user_online_shop/core/helper_functions/valid_input.dart';
 import 'package:user_online_shop/core/utils/app_color.dart';
@@ -9,17 +10,16 @@ import 'package:user_online_shop/core/widgets/custom_button.dart';
 import 'package:user_online_shop/core/widgets/custom_dialog.dart';
 import 'package:user_online_shop/core/widgets/custom_text_field.dart';
 import 'package:user_online_shop/features/2-auth/domain/entities/user_entity.dart';
-import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/cubit/edit_email_cubit.dart';
 import 'package:user_online_shop/generated/l10n.dart';
 
-class EditEmailViewBody extends StatefulWidget {
-  const EditEmailViewBody({super.key});
+class ChangeEmailViewBody extends StatefulWidget {
+  const ChangeEmailViewBody({super.key});
 
   @override
-  State<EditEmailViewBody> createState() => _EditEmailViewBodyState();
+  State<ChangeEmailViewBody> createState() => _ChangeEmailViewBodyState();
 }
 
-class _EditEmailViewBodyState extends State<EditEmailViewBody> {
+class _ChangeEmailViewBodyState extends State<ChangeEmailViewBody> {
   UserEntity user2 = getUser();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
@@ -86,7 +86,7 @@ class _EditEmailViewBodyState extends State<EditEmailViewBody> {
                       textOk: S.of(context).edit_email,
                       content: S.of(context).edit_email,
                       onPressed: () {
-                        context.read<EditEmailCubit>().updateEmail(
+                        context.read<UserCubit>().updateEmail(
                               newEmail: emailController.text,
                             );
                       },

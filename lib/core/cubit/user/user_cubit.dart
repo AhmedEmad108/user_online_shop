@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
+import 'package:user_online_shop/core/helper_functions/get_user.dart';
 import 'package:user_online_shop/features/2-auth/domain/entities/user_entity.dart';
 import 'package:user_online_shop/features/2-auth/domain/repos/auth_repo.dart';
 
@@ -75,6 +76,41 @@ class UserCubit extends Cubit<UserState> {
     //   ),
     // );
   }
+
+Future<void> updateEmail({required String newEmail}) async {
+    emit(ChangeEmailLoading());
+    try {
+      // تحديث الإيميل في Firebase Auth
+      await authRepo.updateUserEmail(newEmail: newEmail);
+      
+      // الحصول على بيانات المستخدم الحالي
+      UserEntity currentUser = getUser();
+      
+      // تحديث بيانات المستخدم في Firestore
+      UserEntity updatedUser = UserEntity(
+        uId: currentUser.uId,
+        email: newEmail,  // الإيميل الجديد
+        name: currentUser.name,
+        phone: currentUser.phone,
+        image: currentUser.image,
+        address: currentUser.address,
+        createdAt: currentUser.createdAt,
+        updatedAt: DateTime.now().toIso8601String(),
+        status: currentUser.status,
+      );
+
+      // تحديث البيانات في Firestore
+      await authRepo.updateUserData(user: updatedUser);
+      
+      // تحديث البيانات محلياً
+      await authRepo.updateUserLocally(user: updatedUser);
+
+      emit(ChangeEmailSuccess());
+    } catch (e) {
+      emit(ChangeEmailFailed(error: e.toString()));
+    }
+  }
+
 
   String getCurrentUserId() {
     return FirebaseAuth.instance.currentUser!.uid;

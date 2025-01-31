@@ -35,5 +35,6 @@ abstract class AuthRepo {
   });
 
   Future updateUserEmail({required String newEmail});
+
   Future signOut();
 }

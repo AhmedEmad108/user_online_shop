@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/become_seller.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/become_seller_view.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/chang_password/change_password_view.dart';
-import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/edit_email_view.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/change_email_view.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/edit_profile/edit_profile_view.dart';
 import 'package:user_online_shop/generated/l10n.dart';
 import 'package:user_online_shop/core/widgets/custom_listtile.dart';
@@ -40,7 +40,7 @@ class CustomProfileItem extends StatelessWidget {
             icon: Icons.email_outlined,
             onTap: () {
               Navigator.of(context).pushNamed(
-                EditEmailView.routeName,
+                ChangeEmailView.routeName,
               );
             },
           ),
@@ -58,7 +58,7 @@ class CustomProfileItem extends StatelessWidget {
             icon: Icons.store_outlined,
             onTap: () {
               Navigator.of(context).pushNamed(
-                SellerRequestView.routeName,
+                BecomeSellerView.routeName,
               );
             },
           ),

@@ -1,52 +1,30 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:user_online_shop/core/services/get_it.dart';
+import 'package:user_online_shop/core/cubit/user/user_cubit.dart';
 import 'package:user_online_shop/core/utils/app_color.dart';
 import 'package:user_online_shop/core/utils/app_images.dart';
-import 'package:user_online_shop/core/widgets/custom_appbar.dart';
 import 'package:user_online_shop/core/widgets/custom_dialog.dart';
 import 'package:user_online_shop/core/widgets/loading_dialog.dart';
 import 'package:user_online_shop/core/widgets/show_snackbar.dart';
-import 'package:user_online_shop/features/2-auth/domain/repos/auth_repo.dart';
 import 'package:user_online_shop/features/2-auth/presentation/views/sign_in_view.dart';
-import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/cubit/edit_email_cubit.dart';
-import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/widgets/edit_email_view_body.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/edit_email/widgets/change_email_view_body.dart';
 import 'package:user_online_shop/generated/l10n.dart';
 
-class EditEmailView extends StatelessWidget {
-  const EditEmailView({super.key});
-  static const routeName = '/edit-email';
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar:
-          customAppBar(context, title: S.of(context).edit_email, icon: true),
-      body: BlocProvider(
-        create: (context) => EditEmailCubit(
-          getIt<AuthRepo>(),
-        ),
-        child: EditEmailViewBlocConsumer(),
-      ),
-    );
-  }
-}
-
-class EditEmailViewBlocConsumer extends StatelessWidget {
-  const EditEmailViewBlocConsumer({
+class ChangeEmailViewBlocConsumer extends StatelessWidget {
+  const ChangeEmailViewBlocConsumer({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<EditEmailCubit, EditEmailState>(
+    return BlocConsumer<UserCubit, UserState>(
       listener: (context, state) {
-        if (state is EditEmailLoading) {
+        if (state is ChangeEmailLoading) {
           Navigator.pop(context);
           loadingDialog(context);
         }
-        if (state is EditEmailSuccess) {
+        if (state is ChangeEmailSuccess) {
           Navigator.pop(context);
           FirebaseAuth.instance.signOut().then((value) {
             Navigator.of(context).pushNamedAndRemoveUntil(
@@ -58,7 +36,7 @@ class EditEmailViewBlocConsumer extends StatelessWidget {
             AppColor.green,
           );
         }
-        if (state is EditEmailFailed) {
+        if (state is ChangeEmailFailed) {
           Navigator.pop(context);
           customDialog(
             context,
@@ -68,7 +46,7 @@ class EditEmailViewBlocConsumer extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return EditEmailViewBody();
+        return ChangeEmailViewBody();
       },
     );
   }

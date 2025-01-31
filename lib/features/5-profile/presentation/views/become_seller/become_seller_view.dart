@@ -1,17 +1,35 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:user_online_shop/core/widgets/custom_appbar.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/widgets/become_seller_view_body.dart';
+import 'package:user_online_shop/generated/l10n.dart';
 
-class SellerRequestView extends StatefulWidget {
-  const SellerRequestView({super.key});
-    static const routeName = '/request-seller';
-
+class BecomeSellerView extends StatelessWidget {
+  const BecomeSellerView({super.key});
+  static const routeName = '/become-seller';
 
   @override
-  State<SellerRequestView> createState() => _SellerRequestViewState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: customAppBar(
+        context,
+        title: S.of(context).become_seller,
+        icon: true,
+      ),
+      body: BecomeSellerViewBody(),
+    );
+  }
 }
 
-class _SellerRequestViewState extends State<SellerRequestView> {
+class BecomeSellerViewBody1 extends StatefulWidget {
+  const BecomeSellerViewBody1({super.key});
+
+  @override
+  State<BecomeSellerViewBody1> createState() => _BecomeSellerViewBody1State();
+}
+
+class _BecomeSellerViewBody1State extends State<BecomeSellerViewBody1> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -23,6 +41,7 @@ class _SellerRequestViewState extends State<SellerRequestView> {
   bool? userHasRequest;
 
   @override
+
   void initState() {
     super.initState();
     checkExistingRequest();
@@ -75,7 +94,10 @@ class _SellerRequestViewState extends State<SellerRequestView> {
         }
 
         // إرسال الطلب
-        await FirebaseFirestore.instance.collection('seller_requests').doc(userId).set({
+        await FirebaseFirestore.instance
+            .collection('seller_requests')
+            .doc(userId)
+            .set({
           'userId': userId,
           'name': nameController.text,
           'email': emailController.text,
