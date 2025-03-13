@@ -6,6 +6,7 @@ import 'package:user_online_shop/core/services/supabase_storage.dart';
 import 'package:user_online_shop/features/2-auth/data/repos/auth_repo_impl.dart';
 import 'package:user_online_shop/features/2-auth/domain/repos/auth_repo.dart';
 import 'package:get_it/get_it.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/models/vender_model.dart';
 
 final getIt = GetIt.instance;
 
@@ -17,6 +18,11 @@ void setupGetIt() {
     AuthRepoImpl(
       firebaseAuthService: getIt<FirebaseAuthService>(),
       databaseService: getIt<DatabaseService>(),
+    ),
+  );
+  getIt.registerSingleton<VendorRepo>(
+    VendorRepoImpl(
+      databaseService: getIt.get<DatabaseService>(),
     ),
   );
   // getIt.registerSingleton<ImagesRepo>(

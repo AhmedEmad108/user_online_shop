@@ -30,6 +30,7 @@ class ProfileHeaderItem extends StatelessWidget {
             radius: 50,
             urlImage: user.image,
             onFileChanged: (String? value) {
+              print('current image: ${user.image}');
               context.read<UserCubit>().editUserImage(image: value!);
             },
           ),

@@ -56,10 +56,10 @@
     "change_theme": "Change Theme",
     "change_language": "Change Language",
     "edit_profile": "Edit Profile",
-    "edit_email": "Edit Email",
+    "change_email": "Change Email",
     "edit_email_message": "Are you sure you want to change your email?",
     "change_password": "Change Password",
-    "become_seller": "Become Seller",
+    "become_seller": "Become A Seller",
     "logout": "Logout",
 
     "dark_mode": "Dark Mode",

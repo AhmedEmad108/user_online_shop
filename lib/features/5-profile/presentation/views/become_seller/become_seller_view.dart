@@ -1,7 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:user_online_shop/core/services/get_it.dart';
+import 'package:user_online_shop/core/utils/app_color.dart';
+import 'package:user_online_shop/core/utils/app_images.dart';
 import 'package:user_online_shop/core/widgets/custom_appbar.dart';
+import 'package:user_online_shop/core/widgets/custom_dialog.dart';
+import 'package:user_online_shop/core/widgets/loading_dialog.dart';
+import 'package:user_online_shop/core/widgets/show_snackbar.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/cubit/becom_seller_cubit.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/models/vender_model.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/widgets/become_seller_view_body.dart';
 import 'package:user_online_shop/generated/l10n.dart';
 
@@ -17,7 +26,51 @@ class BecomeSellerView extends StatelessWidget {
         title: S.of(context).become_seller,
         icon: true,
       ),
-      body: BecomeSellerViewBody(),
+      body: BlocProvider(
+        create: (context) => BecomSellerCubit(
+          getIt.get<VendorRepo>(),
+        ),
+        child: BecomeSellerViewBlocConsumer(),
+      ),
+    );
+  }
+}
+
+class BecomeSellerViewBlocConsumer extends StatelessWidget {
+  const BecomeSellerViewBlocConsumer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<BecomSellerCubit, BecomSellerState>(
+      listener: (context, state) {
+        if (state is BecomSellerLoading) {
+          loadingDialog(context);
+        }
+        if (state is BecomSellerSuccess) {
+          Navigator.pop(context);
+          Navigator.pop(context);
+          showSnackBar(
+            context,
+            'تم تقديم طلبك بنجاح',
+            AppColor.green,
+          );
+          // Navigator.of(context).pushNamedAndRemoveUntil(
+          //   MainView.routeName,
+          //   (route) => false,
+          // );
+        }
+        if (state is BecomSellerFailed) {
+          Navigator.pop(context);
+          customDialog(
+            context,
+            title: state.errMessage,
+            image: Assets.imagesErrors,
+          );
+        }
+      },
+      child: BecomeSellerViewBody(),
     );
   }
 }
@@ -41,7 +94,6 @@ class _BecomeSellerViewBody1State extends State<BecomeSellerViewBody1> {
   bool? userHasRequest;
 
   @override
-
   void initState() {
     super.initState();
     checkExistingRequest();

@@ -9,9 +9,10 @@ class SupabaseStorageService extends StorageService {
 
   static initSupabase() async {
     _supabase = await Supabase.initialize(
-      url: 'https://qkmjtvxaqslofuqeudot.supabase.co',
+      url: 'https://xiuxhprmrgmowqaovisl.supabase.co',
       anonKey:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFrbWp0dnhhcXNsb2Z1cWV1ZG90Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMzI2MDA0NSwiZXhwIjoyMDQ4ODM2MDQ1fQ.nQjyDQWg7RcD5KQ6i5R5r-BKGAOSMevG8z9mirLpCMU',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhpdXhocHJtcmdtb3dxYW92aXNsIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MTg5ODAyNiwiZXhwIjoyMDU3NDc0MDI2fQ.wVcO-qzRZ7hyA7GA1jGWmGKz9i-Km6KjVFB7Jeap5bo',
+      // 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFrbWp0dnhhcXNsb2Z1cWV1ZG90Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMzI2MDA0NSwiZXhwIjoyMDQ4ODM2MDQ1fQ.nQjyDQWg7RcD5KQ6i5R5r-BKGAOSMevG8z9mirLpCMU',
     );
   }
 

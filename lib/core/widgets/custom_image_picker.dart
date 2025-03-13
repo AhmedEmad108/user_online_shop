@@ -85,8 +85,9 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
                               width: widget.radius * 2,
                               height: widget.radius * 2,
                               errorBuilder: (context, error, stackTrace) {
+                                print('Error loading image: $error');
                                 return const Icon(
-                                  Icons.error_outline,
+                                  Icons.person,
                                   color: Colors.red,
                                 );
                               },

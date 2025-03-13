@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_online_shop/contants.dart';
+import 'package:user_online_shop/core/helper_functions/get_user.dart';
+import 'package:user_online_shop/core/helper_functions/valid_input.dart';
+import 'package:user_online_shop/core/utils/app_color.dart';
+import 'package:user_online_shop/core/utils/app_style.dart';
+import 'package:user_online_shop/core/widgets/custom_button.dart';
 import 'package:user_online_shop/core/widgets/custom_text_field.dart';
+import 'package:user_online_shop/core/widgets/custome_image_picker_square.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/cubit/becom_seller_cubit.dart';
+import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/models/vender_model.dart';
+import 'package:user_online_shop/generated/l10n.dart';
 
 class BecomeSellerViewBody extends StatefulWidget {
   const BecomeSellerViewBody({super.key});
@@ -10,54 +20,143 @@ class BecomeSellerViewBody extends StatefulWidget {
 }
 
 class _BecomeSellerViewBodyState extends State<BecomeSellerViewBody> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
+  final TextEditingController nameVendorAr = TextEditingController();
+  final TextEditingController nameVendorEn = TextEditingController();
+  final TextEditingController address = TextEditingController();
+  late String? image, coverImage;
+  final user = getUser();
+
+  @override
+  void dispose() {
+    nameVendorAr.dispose();
+    nameVendorEn.dispose();
+    address.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Form(
+        key: _formKey,
+        autovalidateMode: autoValidateMode,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-            const Text(
-              'To become a seller, you need to fill out the form below. We will review your request and get back to you as soon as possible.',
-              style: TextStyle(
-                fontSize: 16,
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+              child: const Text(
+                'To become a seller, you need to fill out the form below. We will review your request and get back to you as soon as possible.',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
             ),
-            const SizedBox(height: 20),
-            CustomTextField(
-              labels: 'bghjgh',
-              hintText: 'hintText',
-              keyboardType: TextInputType.text,
+            const SizedBox(height: 8),
+            CustomeImagePickerSquare(
+              onFileChanged: (value) {
+                coverImage = value;
+              },
+              onFileChanged2: (value) {
+                image = value;
+              },
             ),
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Name',
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 40),
+                  CustomTextField(
+                    labels: 'Name Vendor in English',
+                    hintText: 'Enter the name of the vendor in English',
+                    controller: nameVendorEn,
+                    validator: (value) {
+                      return validInput(
+                        context: context,
+                        val: nameVendorEn.text,
+                        type: 'name',
+                        max: 20,
+                        min: 5,
+                      );
+                    },
+                    keyboardType: TextInputType.text,
+                  ),
+                  const SizedBox(height: 20),
+                  CustomTextField(
+                    labels: 'Name Vendor in Arabic',
+                    hintText: 'Enter the name of the vendor in Arabic',
+                    controller: nameVendorAr,
+                    validator: (value) {
+                      return validInput(
+                        context: context,
+                        val: nameVendorAr.text,
+                        type: 'name',
+                        max: 20,
+                        min: 5,
+                      );
+                    },
+                    keyboardType: TextInputType.text,
+                  ),
+                  const SizedBox(height: 20),
+                  CustomTextField(
+                    labels: 'Address',
+                    hintText: 'Enter the address',
+                    controller: address,
+                    validator: (value) {
+                      return validInput(
+                        context: context,
+                        val: address.text,
+                        type: 'address',
+                        max: 50,
+                        min: 5,
+                      );
+                    },
+                    keyboardType: TextInputType.text,
+                  ),
+                  const SizedBox(height: 20),
+                  CustomButton(
+                    title: S.of(context).become_seller,
+                    buttonColor: AppColor.primaryColor,
+                    textStyle: AppStyle.styleBold24().copyWith(
+                      color: AppColor.white,
+                    ),
+                    onTap: () {
+                      if (_formKey.currentState!.validate()) {
+                        _formKey.currentState!.save();
+                        context.read<BecomSellerCubit>().becomeSeller(
+                              vendor: VendorEntity(
+                                id: user.uId,
+                                nameVendorAr: nameVendorAr.text,
+                                nameVendorEn: nameVendorEn.text,
+                                email: user.email,
+                                phone: user.phone,
+                                address: address.text,
+                                image: image!,
+                                coverImage: coverImage!,
+                                status: 'pending',
+                                createdAt: DateTime.now().toString(),
+                                updatedAt: '',
+                                productIds: [],
+                                settings: {},
+                                rating: 0,
+                                totalOrders: 0,
+                                balance: 0,
+                              ),
+                            );
+                      } else {
+                        setState(() {
+                          autoValidateMode = AutovalidateMode.always;
+                        });
+                      }
+                    },
+                  ),
+                ],
               ),
-            ),
-            const SizedBox(height: 20),
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Email',
-              ),
-            ),
-            const SizedBox(height: 20),
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Phone',
-              ),
-            ),
-            const SizedBox(height: 20),
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Business Description',
-              ),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Submit'),
             ),
           ],
         ),
