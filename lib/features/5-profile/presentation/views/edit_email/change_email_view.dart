@@ -11,7 +11,7 @@ class ChangeEmailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          customAppBar(context, title: S.of(context).edit_email, icon: true),
+          customAppBar(context, title: S.of(context).change_email, icon: true),
       body: ChangeEmailViewBlocConsumer(),
     );
   }

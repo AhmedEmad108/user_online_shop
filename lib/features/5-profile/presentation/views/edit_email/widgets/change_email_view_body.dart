@@ -72,7 +72,7 @@ class _ChangeEmailViewBodyState extends State<ChangeEmailViewBody> {
                 height: 16,
               ),
               CustomButton(
-                title: S.of(context).edit_email,
+                title: S.of(context).change_email,
                 buttonColor: AppColor.primaryColor,
                 textStyle: AppStyle.styleBold24().copyWith(
                   color: AppColor.white,
@@ -82,9 +82,9 @@ class _ChangeEmailViewBodyState extends State<ChangeEmailViewBody> {
                     formKey.currentState!.save();
                     customDialog(
                       context,
-                      title: S.of(context).edit_email,
-                      textOk: S.of(context).edit_email,
-                      content: S.of(context).edit_email,
+                      title: S.of(context).change_email,
+                      textOk: S.of(context).change_email,
+                      content: S.of(context).edit_email_message,
                       onPressed: () {
                         context.read<UserCubit>().updateEmail(
                               newEmail: emailController.text,

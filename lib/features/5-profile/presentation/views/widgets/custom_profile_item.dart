@@ -36,7 +36,7 @@ class CustomProfileItem extends StatelessWidget {
             },
           ),
           CustomListTile(
-            title: S.of(context).edit_email,
+            title: S.of(context).change_email,
             icon: Icons.email_outlined,
             onTap: () {
               Navigator.of(context).pushNamed(

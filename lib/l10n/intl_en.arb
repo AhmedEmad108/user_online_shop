@@ -1,4 +1,9 @@
 {
+  "@@locale": "en",
+    "appTitle": "Online Shop",
+    "@appTitle": {
+        "description": "The title of the application"
+    },
     "hello": "Hello!...",
     "signin": "Sign In",
     "signup": "Sign Up",
