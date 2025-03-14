@@ -147,7 +147,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                       name: userName.text,
                       phone: phone.text,
                       image: urlImage!,
-                      address: user2.address,
+                      address: address.text,
                       createdAt: user2.createdAt,
                       updatedAt: DateTime.now().toIso8601String(),
                       status: user2.status,

@@ -191,7 +191,19 @@
   "invalid_current_password": "كلمة المرور الحالية غير صالحة",
   "new_password_and_confirm_password_does_not_match": "كلمة المرور الجديدة وتاكيد كلمة المرور غير متطابقان",
   "password_updated_successfully": "تم تحديث كلمة المرور بنجاح",
-  "logout_message": "هل تريد تسجيل الخروج؟"
+  "logout_message": "هل تريد تسجيل الخروج؟",
+
+
+  "name_vendor_en": "اسم البائع بالانجليزي",
+  "name_vendor_ar": "اسم البائع بالعربي",
+  "enter_name_vendor_en": "ادخل اسم البائع بالانجليزي",
+  "enter_name_vendor_ar": "ادخل اسم البائع بالعربي",
+  "phone_vendor": "رقم الهاتف للبائع",
+  "vendor_address": "عنوان البائع",
+  "enter_vendor_address": "ادخل عنوان البائع",
+  "enter_phone_vendor": "ادخل رقم الهاتف للبائع",
+  "vendor_message": "لتصبح بائعا، يجب تعبئة النموذج التالي. سيتم مراجعة طلبك والحصول على ردك في اسرع وقت ممكن.",
+  "vendor_message2": "يرجى تعبئة النموذج التالي لتصبح بائعا. سيتم مراجعة طلبك والحصول على ردك في اسرع وقت ممكن."
 
       
 }

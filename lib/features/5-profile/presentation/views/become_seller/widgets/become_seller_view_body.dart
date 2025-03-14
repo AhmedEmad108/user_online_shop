@@ -25,6 +25,7 @@ class _BecomeSellerViewBodyState extends State<BecomeSellerViewBody> {
   final TextEditingController nameVendorAr = TextEditingController();
   final TextEditingController nameVendorEn = TextEditingController();
   final TextEditingController address = TextEditingController();
+  final TextEditingController phone = TextEditingController();
   late String? image, coverImage;
   final user = getUser();
 
@@ -33,6 +34,7 @@ class _BecomeSellerViewBodyState extends State<BecomeSellerViewBody> {
     nameVendorAr.dispose();
     nameVendorEn.dispose();
     address.dispose();
+    phone.dispose();
     super.dispose();
   }
 
@@ -48,8 +50,8 @@ class _BecomeSellerViewBodyState extends State<BecomeSellerViewBody> {
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-              child: const Text(
-                'To become a seller, you need to fill out the form below. We will review your request and get back to you as soon as possible.',
+              child: Text(
+                S.of(context).vendor_message2,
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -72,8 +74,8 @@ class _BecomeSellerViewBodyState extends State<BecomeSellerViewBody> {
                 children: [
                   const SizedBox(height: 40),
                   CustomTextField(
-                    labels: 'Name Vendor in English',
-                    hintText: 'Enter the name of the vendor in English',
+                    labels: S.of(context).name_vendor_en,
+                    hintText: S.of(context).enter_name_vendor_en,
                     controller: nameVendorEn,
                     validator: (value) {
                       return validInput(
@@ -88,8 +90,8 @@ class _BecomeSellerViewBodyState extends State<BecomeSellerViewBody> {
                   ),
                   const SizedBox(height: 20),
                   CustomTextField(
-                    labels: 'Name Vendor in Arabic',
-                    hintText: 'Enter the name of the vendor in Arabic',
+                    labels: S.of(context).name_vendor_ar,
+                    hintText: S.of(context).enter_name_vendor_ar,
                     controller: nameVendorAr,
                     validator: (value) {
                       return validInput(
@@ -104,8 +106,24 @@ class _BecomeSellerViewBodyState extends State<BecomeSellerViewBody> {
                   ),
                   const SizedBox(height: 20),
                   CustomTextField(
-                    labels: 'Address',
-                    hintText: 'Enter the address',
+                    labels: S.of(context).phone_vendor,
+                    hintText: S.of(context).enter_phone_vendor,
+                    controller: phone,
+                    validator: (value) {
+                      return validInput(
+                        context: context,
+                        val: phone.text,
+                        type: 'phone',
+                        max: 20,
+                        min: 5,
+                      );
+                    },
+                    keyboardType: TextInputType.phone,
+                  ),
+                  const SizedBox(height: 20),
+                  CustomTextField(
+                    labels: S.of(context).vendor_address,
+                    hintText: S.of(context).enter_vendor_address,
                     controller: address,
                     validator: (value) {
                       return validInput(
@@ -134,7 +152,7 @@ class _BecomeSellerViewBodyState extends State<BecomeSellerViewBody> {
                                 nameVendorAr: nameVendorAr.text,
                                 nameVendorEn: nameVendorEn.text,
                                 email: user.email,
-                                phone: user.phone,
+                                phone: phone.text,
                                 address: address.text,
                                 image: image!,
                                 coverImage: coverImage!,

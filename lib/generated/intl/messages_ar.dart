@@ -145,10 +145,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "ادخل بريدك الالكتروني",
     ),
     "enter_name": MessageLookupByLibrary.simpleMessage("ادخل اسمك"),
+    "enter_name_vendor_ar": MessageLookupByLibrary.simpleMessage(
+      "ادخل اسم البائع بالعربي",
+    ),
+    "enter_name_vendor_en": MessageLookupByLibrary.simpleMessage(
+      "ادخل اسم البائع بالانجليزي",
+    ),
     "enter_new_password": MessageLookupByLibrary.simpleMessage(
       "ادخل كلمة المرور الجديدة",
     ),
     "enter_phone": MessageLookupByLibrary.simpleMessage("ادخل رقم هاتفك"),
+    "enter_phone_vendor": MessageLookupByLibrary.simpleMessage(
+      "ادخل رقم الهاتف للبائع",
+    ),
     "enter_product_category_ar": MessageLookupByLibrary.simpleMessage(
       "ادخل فئة المنتج بالعربي",
     ),
@@ -172,6 +181,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enter_product_price": MessageLookupByLibrary.simpleMessage(
       "ادخل سعر المنتج",
+    ),
+    "enter_vendor_address": MessageLookupByLibrary.simpleMessage(
+      "ادخل عنوان البائع",
     ),
     "enter_your_password": MessageLookupByLibrary.simpleMessage(
       "ادخل كلمة المرور",
@@ -218,6 +230,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "هل تريد تسجيل الخروج؟",
     ),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+    "name_vendor_ar": MessageLookupByLibrary.simpleMessage(
+      "اسم البائع بالعربي",
+    ),
+    "name_vendor_en": MessageLookupByLibrary.simpleMessage(
+      "اسم البائع بالانجليزي",
+    ),
     "new_": MessageLookupByLibrary.simpleMessage("جديد "),
     "new_password": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
     "new_password_and_confirm_password_does_not_match":
@@ -254,6 +272,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تحديث كلمة المرور بنجاح",
     ),
     "phone": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "phone_vendor": MessageLookupByLibrary.simpleMessage("رقم الهاتف للبائع"),
     "please_accept_terms_and_conditions": MessageLookupByLibrary.simpleMessage(
       "الرجاء قبول شروط الخدمة وسياسة الخصوصية",
     ),
@@ -354,6 +373,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "شروط الخدمة وسياسة الخصوصية.",
     ),
     "update": MessageLookupByLibrary.simpleMessage("تحديث"),
+    "vendor_address": MessageLookupByLibrary.simpleMessage("عنوان البائع"),
+    "vendor_message": MessageLookupByLibrary.simpleMessage(
+      "لتصبح بائعا، يجب تعبئة النموذج التالي. سيتم مراجعة طلبك والحصول على ردك في اسرع وقت ممكن.",
+    ),
+    "vendor_message2": MessageLookupByLibrary.simpleMessage(
+      "يرجى تعبئة النموذج التالي لتصبح بائعا. سيتم مراجعة طلبك والحصول على ردك في اسرع وقت ممكن.",
+    ),
     "verification_code": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verify_code": MessageLookupByLibrary.simpleMessage("تحقق من رمزك"),
     "welcome_back": MessageLookupByLibrary.simpleMessage("مرحبا بعودتك!..."),

@@ -204,7 +204,19 @@
   "new_password_and_confirm_password_does_not_match": "New password and confirm password does not match",
 
   "password_updated_successfully": "Password updated successfully",
-  "logout_message": "Are you sure you want to logout?"
+  "logout_message": "Are you sure you want to logout?",
+
+
+  "name_vendor_en": "Name Vendor in English",
+  "name_vendor_ar": "Name Vendor in Arabic",
+  "enter_name_vendor_en": "Enter the name of the vendor in English",
+  "enter_name_vendor_ar": "Enter the name of the vendor in Arabic",
+  "phone_vendor": "Phone Vendor",
+  "vendor_address": "Vendor Address",
+  "enter_vendor_address": "Enter the address of the vendor",
+  "enter_phone_vendor": "Enter the phone number of the vendor",
+  "vendor_message": "To become a seller, you need to fill out the form below. We will review your request and get back to you as soon as possible.",
+  "vendor_message2": "Please fill out the form below to become a seller. We will review your request and get back to you as soon as possible."
 
       
 

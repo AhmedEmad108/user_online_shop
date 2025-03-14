@@ -1536,6 +1536,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Name Vendor in English`
+  String get name_vendor_en {
+    return Intl.message(
+      'Name Vendor in English',
+      name: 'name_vendor_en',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name Vendor in Arabic`
+  String get name_vendor_ar {
+    return Intl.message(
+      'Name Vendor in Arabic',
+      name: 'name_vendor_ar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the name of the vendor in English`
+  String get enter_name_vendor_en {
+    return Intl.message(
+      'Enter the name of the vendor in English',
+      name: 'enter_name_vendor_en',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the name of the vendor in Arabic`
+  String get enter_name_vendor_ar {
+    return Intl.message(
+      'Enter the name of the vendor in Arabic',
+      name: 'enter_name_vendor_ar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Vendor`
+  String get phone_vendor {
+    return Intl.message(
+      'Phone Vendor',
+      name: 'phone_vendor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vendor Address`
+  String get vendor_address {
+    return Intl.message(
+      'Vendor Address',
+      name: 'vendor_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the address of the vendor`
+  String get enter_vendor_address {
+    return Intl.message(
+      'Enter the address of the vendor',
+      name: 'enter_vendor_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the phone number of the vendor`
+  String get enter_phone_vendor {
+    return Intl.message(
+      'Enter the phone number of the vendor',
+      name: 'enter_phone_vendor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To become a seller, you need to fill out the form below. We will review your request and get back to you as soon as possible.`
+  String get vendor_message {
+    return Intl.message(
+      'To become a seller, you need to fill out the form below. We will review your request and get back to you as soon as possible.',
+      name: 'vendor_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill out the form below to become a seller. We will review your request and get back to you as soon as possible.`
+  String get vendor_message2 {
+    return Intl.message(
+      'Please fill out the form below to become a seller. We will review your request and get back to you as soon as possible.',
+      name: 'vendor_message2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

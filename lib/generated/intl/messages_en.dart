@@ -140,10 +140,19 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enter_email": MessageLookupByLibrary.simpleMessage("Enter Your Email"),
     "enter_name": MessageLookupByLibrary.simpleMessage("Enter Your User Name"),
+    "enter_name_vendor_ar": MessageLookupByLibrary.simpleMessage(
+      "Enter the name of the vendor in Arabic",
+    ),
+    "enter_name_vendor_en": MessageLookupByLibrary.simpleMessage(
+      "Enter the name of the vendor in English",
+    ),
     "enter_new_password": MessageLookupByLibrary.simpleMessage(
       "Enter New Password",
     ),
     "enter_phone": MessageLookupByLibrary.simpleMessage("Enter Your Phone"),
+    "enter_phone_vendor": MessageLookupByLibrary.simpleMessage(
+      "Enter the phone number of the vendor",
+    ),
     "enter_product_category_ar": MessageLookupByLibrary.simpleMessage(
       "Enter Product Category Arabic",
     ),
@@ -167,6 +176,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enter_product_price": MessageLookupByLibrary.simpleMessage(
       "Enter Product Price",
+    ),
+    "enter_vendor_address": MessageLookupByLibrary.simpleMessage(
+      "Enter the address of the vendor",
     ),
     "enter_your_password": MessageLookupByLibrary.simpleMessage(
       "Enter Your Password",
@@ -211,6 +223,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Are you sure you want to logout?",
     ),
     "name": MessageLookupByLibrary.simpleMessage("User Name"),
+    "name_vendor_ar": MessageLookupByLibrary.simpleMessage(
+      "Name Vendor in Arabic",
+    ),
+    "name_vendor_en": MessageLookupByLibrary.simpleMessage(
+      "Name Vendor in English",
+    ),
     "new_": MessageLookupByLibrary.simpleMessage("New "),
     "new_password": MessageLookupByLibrary.simpleMessage("New Password"),
     "new_password_and_confirm_password_does_not_match":
@@ -249,6 +267,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password updated successfully",
     ),
     "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+    "phone_vendor": MessageLookupByLibrary.simpleMessage("Phone Vendor"),
     "please_accept_terms_and_conditions": MessageLookupByLibrary.simpleMessage(
       "Please accept terms and conditions",
     ),
@@ -351,6 +370,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "our Terms of Service and Privacy Policy.",
     ),
     "update": MessageLookupByLibrary.simpleMessage("Update"),
+    "vendor_address": MessageLookupByLibrary.simpleMessage("Vendor Address"),
+    "vendor_message": MessageLookupByLibrary.simpleMessage(
+      "To become a seller, you need to fill out the form below. We will review your request and get back to you as soon as possible.",
+    ),
+    "vendor_message2": MessageLookupByLibrary.simpleMessage(
+      "Please fill out the form below to become a seller. We will review your request and get back to you as soon as possible.",
+    ),
     "verification_code": MessageLookupByLibrary.simpleMessage(
       "Verification Code",
     ),
