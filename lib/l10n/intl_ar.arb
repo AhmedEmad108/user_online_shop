@@ -1,4 +1,9 @@
 {
+  "@@locale": "ar",
+  "appTitle": "متجر اونلاين",
+  "@appTitle": {
+    "description": "عنوان التطبيق"
+  },
     "hello": "مرحبا!...",
     "signin": "تسجيل الدخول",
     "signup": "تسجيل",

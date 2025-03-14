@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_online_shop/contants.dart';
@@ -6,6 +8,7 @@ import 'package:user_online_shop/core/helper_functions/valid_input.dart';
 import 'package:user_online_shop/core/utils/app_color.dart';
 import 'package:user_online_shop/core/utils/app_style.dart';
 import 'package:user_online_shop/core/widgets/custom_button.dart';
+import 'package:user_online_shop/core/widgets/custom_dialog.dart';
 import 'package:user_online_shop/core/widgets/custom_text_field.dart';
 import 'package:user_online_shop/core/widgets/custome_image_picker_square.dart';
 import 'package:user_online_shop/features/5-profile/presentation/views/become_seller/cubit/becom_seller_cubit.dart';
@@ -26,7 +29,7 @@ class _BecomeSellerViewBodyState extends State<BecomeSellerViewBody> {
   final TextEditingController nameVendorEn = TextEditingController();
   final TextEditingController address = TextEditingController();
   final TextEditingController phone = TextEditingController();
-  late String? image, coverImage;
+  String? image, coverImage;
   final user = getUser();
 
   @override
@@ -144,32 +147,39 @@ class _BecomeSellerViewBodyState extends State<BecomeSellerViewBody> {
                       color: AppColor.white,
                     ),
                     onTap: () {
-                      if (_formKey.currentState!.validate()) {
-                        _formKey.currentState!.save();
-                        context.read<BecomSellerCubit>().becomeSeller(
-                              vendor: VendorEntity(
-                                id: user.uId,
-                                nameVendorAr: nameVendorAr.text,
-                                nameVendorEn: nameVendorEn.text,
-                                email: user.email,
-                                phone: phone.text,
-                                address: address.text,
-                                image: image!,
-                                coverImage: coverImage!,
-                                status: 'pending',
-                                createdAt: DateTime.now().toString(),
-                                updatedAt: '',
-                                productIds: [],
-                                settings: {},
-                                rating: 0,
-                                totalOrders: 0,
-                                balance: 0,
-                              ),
-                            );
+                      if (image != null && coverImage != null) {
+                        if (_formKey.currentState!.validate()) {
+                          _formKey.currentState!.save();
+                          context.read<BecomSellerCubit>().becomeSeller(
+                                vendor: VendorEntity(
+                                  id: user.uId,
+                                  nameVendorAr: nameVendorAr.text,
+                                  nameVendorEn: nameVendorEn.text,
+                                  email: user.email,
+                                  phone: phone.text,
+                                  address: address.text,
+                                  image: image!,
+                                  coverImage: coverImage!,
+                                  status: 'pending',
+                                  createdAt: DateTime.now().toString(),
+                                  updatedAt: '',
+                                  productIds: [],
+                                  settings: {},
+                                  rating: 0,
+                                  totalOrders: 0,
+                                  balance: 0,
+                                ),
+                              );
+                        } else {
+                          setState(() {
+                            autoValidateMode = AutovalidateMode.always;
+                          });
+                        }
                       } else {
-                        setState(() {
-                          autoValidateMode = AutovalidateMode.always;
-                        });
+                        customDialog(
+                          context,
+                          title: S.of(context).please_select_image,
+                        );
                       }
                     },
                   ),

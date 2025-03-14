@@ -34,9 +34,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "لديك حساب؟",
     ),
+    "already_submitted_request": MessageLookupByLibrary.simpleMessage(
+      "لقد قمت بتقديم طلب مسبق",
+    ),
+    "appTitle": MessageLookupByLibrary.simpleMessage("متجر اونلاين"),
     "arabic": MessageLookupByLibrary.simpleMessage("اللغة العربية"),
-    "become_seller": MessageLookupByLibrary.simpleMessage("اصبح بائع"),
+    "become_seller": MessageLookupByLibrary.simpleMessage("التحول إلى بائع"),
     "best_selling": MessageLookupByLibrary.simpleMessage("الاكثر مبيعاً"),
+    "business_description": MessageLookupByLibrary.simpleMessage(
+      "وصف النشاط التجاري",
+    ),
     "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
     "cant_be_empty": MessageLookupByLibrary.simpleMessage(
       "لا يمكن ترك هذا الحقل فارغاً",
@@ -125,7 +132,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "edit_product": MessageLookupByLibrary.simpleMessage("تعديل المنتج"),
     "edit_profile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
-    "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "empty_search_results": MessageLookupByLibrary.simpleMessage(
       "لا توجد نتائج للبحث",
     ),
@@ -188,9 +195,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_your_password": MessageLookupByLibrary.simpleMessage(
       "ادخل كلمة المرور",
     ),
+    "error_submitting_request": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء إرسال الطلب",
+    ),
     "forget_password": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة المرور؟",
     ),
+    "full_name": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "gg": MessageLookupByLibrary.simpleMessage("الطلبات"),
     "go_to_login": MessageLookupByLibrary.simpleMessage(
       "الذهاب لتسجيل الدخول بنجاح",
@@ -272,9 +283,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تحديث كلمة المرور بنجاح",
     ),
     "phone": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "phone_vendor": MessageLookupByLibrary.simpleMessage("رقم الهاتف للبائع"),
     "please_accept_terms_and_conditions": MessageLookupByLibrary.simpleMessage(
       "الرجاء قبول شروط الخدمة وسياسة الخصوصية",
+    ),
+    "please_enter_business_description": MessageLookupByLibrary.simpleMessage(
+      "يُرجى إدخال وصف النشاط التجاري",
+    ),
+    "please_enter_email": MessageLookupByLibrary.simpleMessage(
+      "يُرجى إدخال البريد الإلكتروني",
+    ),
+    "please_enter_full_name": MessageLookupByLibrary.simpleMessage(
+      "يُرجى إدخال الاسم الكامل",
+    ),
+    "please_enter_phone": MessageLookupByLibrary.simpleMessage(
+      "يُرجى إدخال رقم الهاتف",
     ),
     "please_enter_your_email": MessageLookupByLibrary.simpleMessage(
       "الرجاء ادخال بريدك الالكتروني لتلقي رمز التحقق",
@@ -331,6 +355,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "اسحب لأسفل للتحديث",
     ),
     "refresh": MessageLookupByLibrary.simpleMessage("تحديث"),
+    "request_submitted_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال طلبك بنجاح. سيتم مراجعته قريبًا",
+    ),
+    "request_under_review": MessageLookupByLibrary.simpleMessage(
+      "لقد قمت بالفعل بإرسال طلب. يُرجى انتظار المراجعة",
+    ),
     "resend_code": MessageLookupByLibrary.simpleMessage("ارسال مرة اخرى"),
     "reset_password": MessageLookupByLibrary.simpleMessage(
       "اعادة تعيين كلمة المرور",
@@ -363,6 +393,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "signin": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signup": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "submit_request": MessageLookupByLibrary.simpleMessage("إرسال الطلب"),
     "successfully_created_account": MessageLookupByLibrary.simpleMessage(
       "تم انشاء الحساب بنجاح",
     ),

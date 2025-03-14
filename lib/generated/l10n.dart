@@ -527,10 +527,10 @@ class S {
     );
   }
 
-  /// `Become A Seller`
+  /// `Become a Seller`
   String get become_seller {
     return Intl.message(
-      'Become A Seller',
+      'Become a Seller',
       name: 'become_seller',
       desc: '',
       args: [],
@@ -1632,6 +1632,121 @@ class S {
     return Intl.message(
       'Please fill out the form below to become a seller. We will review your request and get back to you as soon as possible.',
       name: 'vendor_message2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get full_name {
+    return Intl.message('Full Name', name: 'full_name', desc: '', args: []);
+  }
+
+  /// `Phone Number`
+  String get phone_number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Business Description`
+  String get business_description {
+    return Intl.message(
+      'Business Description',
+      name: 'business_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit Request`
+  String get submit_request {
+    return Intl.message(
+      'Submit Request',
+      name: 'submit_request',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your full name`
+  String get please_enter_full_name {
+    return Intl.message(
+      'Please enter your full name',
+      name: 'please_enter_full_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email`
+  String get please_enter_email {
+    return Intl.message(
+      'Please enter your email',
+      name: 'please_enter_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number`
+  String get please_enter_phone {
+    return Intl.message(
+      'Please enter your phone number',
+      name: 'please_enter_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your business description`
+  String get please_enter_business_description {
+    return Intl.message(
+      'Please enter your business description',
+      name: 'please_enter_business_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have already submitted a request`
+  String get already_submitted_request {
+    return Intl.message(
+      'You have already submitted a request',
+      name: 'already_submitted_request',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your request has been submitted successfully. It will be reviewed soon`
+  String get request_submitted_successfully {
+    return Intl.message(
+      'Your request has been submitted successfully. It will be reviewed soon',
+      name: 'request_submitted_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error submitting request`
+  String get error_submitting_request {
+    return Intl.message(
+      'Error submitting request',
+      name: 'error_submitting_request',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have already submitted a request. Please wait for review`
+  String get request_under_review {
+    return Intl.message(
+      'You have already submitted a request. Please wait for review',
+      name: 'request_under_review',
       desc: '',
       args: [],
     );

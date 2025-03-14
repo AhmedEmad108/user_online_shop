@@ -36,10 +36,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
+    "already_submitted_request": MessageLookupByLibrary.simpleMessage(
+      "You have already submitted a request",
+    ),
     "appTitle": MessageLookupByLibrary.simpleMessage("Online Shop"),
     "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
-    "become_seller": MessageLookupByLibrary.simpleMessage("Become A Seller"),
+    "become_seller": MessageLookupByLibrary.simpleMessage("Become a Seller"),
     "best_selling": MessageLookupByLibrary.simpleMessage("Best Selling"),
+    "business_description": MessageLookupByLibrary.simpleMessage(
+      "Business Description",
+    ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cant_be_empty": MessageLookupByLibrary.simpleMessage("Cant Be Empty"),
     "cant_be_large_than": MessageLookupByLibrary.simpleMessage(
@@ -183,7 +189,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_your_password": MessageLookupByLibrary.simpleMessage(
       "Enter Your Password",
     ),
+    "error_submitting_request": MessageLookupByLibrary.simpleMessage(
+      "Error submitting request",
+    ),
     "forget_password": MessageLookupByLibrary.simpleMessage("Forget Password?"),
+    "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
     "gg": MessageLookupByLibrary.simpleMessage("Orders"),
     "go_to_login": MessageLookupByLibrary.simpleMessage("Go To Sign In"),
     "hello": MessageLookupByLibrary.simpleMessage("Hello!..."),
@@ -267,9 +277,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password updated successfully",
     ),
     "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+    "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "phone_vendor": MessageLookupByLibrary.simpleMessage("Phone Vendor"),
     "please_accept_terms_and_conditions": MessageLookupByLibrary.simpleMessage(
       "Please accept terms and conditions",
+    ),
+    "please_enter_business_description": MessageLookupByLibrary.simpleMessage(
+      "Please enter your business description",
+    ),
+    "please_enter_email": MessageLookupByLibrary.simpleMessage(
+      "Please enter your email",
+    ),
+    "please_enter_full_name": MessageLookupByLibrary.simpleMessage(
+      "Please enter your full name",
+    ),
+    "please_enter_phone": MessageLookupByLibrary.simpleMessage(
+      "Please enter your phone number",
     ),
     "please_enter_your_email": MessageLookupByLibrary.simpleMessage(
       "Please Enter Your Email Addresss To Recieve A Verification Code",
@@ -326,6 +349,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Pull down to refresh",
     ),
     "refresh": MessageLookupByLibrary.simpleMessage("Refresh"),
+    "request_submitted_successfully": MessageLookupByLibrary.simpleMessage(
+      "Your request has been submitted successfully. It will be reviewed soon",
+    ),
+    "request_under_review": MessageLookupByLibrary.simpleMessage(
+      "You have already submitted a request. Please wait for review",
+    ),
     "resend_code": MessageLookupByLibrary.simpleMessage("Resend Code"),
     "reset_password": MessageLookupByLibrary.simpleMessage("Reset Password"),
     "retry": MessageLookupByLibrary.simpleMessage("Retry"),
@@ -360,6 +389,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "signin": MessageLookupByLibrary.simpleMessage("Sign In"),
     "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "submit_request": MessageLookupByLibrary.simpleMessage("Submit Request"),
     "successfully_created_account": MessageLookupByLibrary.simpleMessage(
       "Successfully created account",
     ),
