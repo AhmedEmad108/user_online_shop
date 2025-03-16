@@ -1,22 +1,39 @@
 part of 'becom_seller_cubit.dart';
 
-sealed class BecomSellerState extends Equatable {
-  const BecomSellerState();
+sealed class SellerRequestState extends Equatable {
+  const SellerRequestState();
 
   @override
   List<Object> get props => [];
 }
+class SellerRequestInitial extends SellerRequestState {}
 
-final class BecomSellerInitial extends BecomSellerState {}
+class SellerRequestLoading extends SellerRequestState {}
 
-final class BecomSellerLoading extends BecomSellerState {}
+class SellerRequestSuccess extends SellerRequestState {
+  final String status;
+  final Map<String, dynamic>? requestData;
 
-final class BecomSellerSuccess extends BecomSellerState {
-  final VendorEntity vendorEntity;
-  const BecomSellerSuccess(this.vendorEntity);
+  const SellerRequestSuccess({required this.status, this.requestData});
 }
 
-final class BecomSellerFailed extends BecomSellerState {
-  final String errMessage;
-  const BecomSellerFailed({required this.errMessage});
+class SellerRequestError extends SellerRequestState {
+  final String message;
+
+  const SellerRequestError(this.message);
 }
+
+
+// final class BecomSellerInitial extends BecomSellerState {}
+
+// final class BecomSellerLoading extends BecomSellerState {}
+
+// final class BecomSellerSuccess extends BecomSellerState {
+//   final VendorEntity vendorEntity;
+//   const BecomSellerSuccess(this.vendorEntity);
+// }
+
+// final class BecomSellerFailed extends BecomSellerState {
+//   final String errMessage;
+//   const BecomSellerFailed({required this.errMessage});
+// }

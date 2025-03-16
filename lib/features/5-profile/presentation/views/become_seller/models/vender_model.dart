@@ -23,6 +23,7 @@ class VendorEntity {
   final double rating;
   final int totalOrders;
   final double balance;
+  final List<String> additionalImages;
 
   const VendorEntity({
     required this.id,
@@ -41,7 +42,162 @@ class VendorEntity {
     required this.rating,
     required this.totalOrders,
     required this.balance,
+    this.additionalImages = const [],
   });
+
+  factory VendorEntity.fromJson(Map<String, dynamic> json) {
+    return VendorEntity(
+      id: json['id'] as String,
+      nameVendorAr: json['nameVendorAr'] as String,
+      nameVendorEn: json['nameVendorEn'] as String,
+      email: json['email'] as String,
+      phone: json['phone'] as String,
+      image: json['image'] as String,
+      coverImage: json['coverImage'] as String,
+      address: json['address'] as String,
+      status: json['status'] as String,
+      createdAt: json['createdAt'] as String,
+      updatedAt: json['updatedAt'] as String,
+      productIds: json['productIds'] as List<String>,
+      settings: json['settings'] as Map<String, dynamic>,
+      rating: json['rating'] as double,
+      totalOrders: json['totalOrders'] as int,
+      balance: json['balance'] as double,
+      additionalImages: json['additionalImages'] as List<String>,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'nameVendorAr': nameVendorAr,
+      'nameVendorEn': nameVendorEn,
+      'email': email,
+      'phone': phone,
+      'image': image,
+      'coverImage': coverImage,
+      'address': address,
+      'status': status,
+      'createdAt': createdAt,
+      'updatedAt': updatedAt,
+      'productIds': productIds,
+      'settings': settings,
+      'rating': rating,
+      'totalOrders': totalOrders,
+      'balance': balance,
+      'additionalImages': additionalImages,
+    };
+  }
+
+  VendorModel toModel() {
+    return VendorModel(
+      id: id,
+      nameVendorAr: nameVendorAr,
+      nameVendorEn: nameVendorEn,
+      email: email,
+      phone: phone,
+      image: image,
+      coverImage: coverImage,
+      address: address,
+      status: status,
+      createdAt: createdAt,
+      updatedAt: updatedAt,
+      productIds: productIds,
+      settings: settings,
+      rating: rating,
+      totalOrders: totalOrders,
+      balance: balance,
+      additionalImages: additionalImages,
+    );
+  }
+
+  VendorEntity toEntity() {
+    return VendorEntity(
+      id: id,
+      nameVendorAr: nameVendorAr,
+      nameVendorEn: nameVendorEn,
+      email: email,
+      phone: phone,
+      image: image,
+      coverImage: coverImage,
+      address: address,
+      status: status,
+      createdAt: createdAt,
+      updatedAt: updatedAt,
+      productIds: productIds,
+      settings: settings,
+      rating: rating,
+      totalOrders: totalOrders,
+      balance: balance,
+      additionalImages: additionalImages,
+    );
+  }
+
+  factory VendorEntity.fromModel(VendorModel model) {
+    return VendorEntity(
+      id: model.id,
+      nameVendorAr: model.nameVendorAr,
+      nameVendorEn: model.nameVendorEn,
+      email: model.email,
+      phone: model.phone,
+      image: model.image,
+      coverImage: model.coverImage,
+      address: model.address,
+      status: model.status,
+      createdAt: model.createdAt,
+      updatedAt: model.updatedAt,
+      productIds: model.productIds,
+      settings: model.settings,
+      rating: model.rating,
+      totalOrders: model.totalOrders,
+      balance: model.balance,
+      additionalImages: model.additionalImages,
+    );
+  }
+
+  factory VendorEntity.fromSnapshot(Map<String, dynamic> snapshot) {
+    return VendorEntity(
+      id: snapshot['id'] as String,
+      nameVendorAr: snapshot['nameVendorAr'] as String,
+      nameVendorEn: snapshot['nameVendorEn'] as String,
+      email: snapshot['email'] as String,
+      phone: snapshot['phone'] as String,
+      image: snapshot['image'] as String,
+      coverImage: snapshot['coverImage'] as String,
+      address: snapshot['address'] as String,
+      status: snapshot['status'] as String,
+      createdAt: snapshot['createdAt'] as String,
+      updatedAt: snapshot['updatedAt'] as String,
+      productIds: List<String>.from(snapshot['productIds'] as List),
+      settings: snapshot['settings'] as Map<String, dynamic>,
+      rating: snapshot['rating'] as double,
+      totalOrders: snapshot['totalOrders'] as int,
+      balance: snapshot['balance'] as double,
+      additionalImages: List<String>.from(snapshot['additionalImages'] as List),
+    );
+  }
+
+  toMap() {
+    return {
+      'id': id,
+      'nameVendorAr': nameVendorAr,
+      'nameVendorEn': nameVendorEn,
+      'email': email,
+      'phone': phone,
+      'image': image,
+      'coverImage': coverImage,
+      'address': address,
+      'status': status,
+      'createdAt': createdAt,
+      'updatedAt': updatedAt,
+      'productIds': productIds,
+      'settings': settings,
+      'rating': rating,
+      'totalOrders': totalOrders,
+      'balance': balance,
+      'additionalImages': additionalImages,
+    };
+  }
 }
 
 // vendor_model.dart
@@ -62,6 +218,7 @@ class VendorModel {
   final double rating;
   final int totalOrders;
   final double balance;
+  final List<String> additionalImages;
 
   const VendorModel({
     required this.id,
@@ -80,6 +237,7 @@ class VendorModel {
     required this.rating,
     required this.totalOrders,
     required this.balance,
+    this.additionalImages = const [],
   });
 
   factory VendorModel.fromJson(Map<String, dynamic> json) {
@@ -100,6 +258,9 @@ class VendorModel {
       rating: (json['rating'] as num).toDouble(),
       totalOrders: json['total_orders'] as int,
       balance: (json['balance'] as num).toDouble(),
+      additionalImages: json['additional_images'] != null
+          ? List<String>.from(json['additional_images'] as List)
+          : [],
     );
   }
 
@@ -121,6 +282,7 @@ class VendorModel {
       'rating': rating,
       'total_orders': totalOrders,
       'balance': balance,
+      'additional_images': additionalImages,
     };
   }
 
@@ -142,6 +304,7 @@ class VendorModel {
       rating: rating,
       totalOrders: totalOrders,
       balance: balance,
+      additionalImages: additionalImages,
     );
   }
 
@@ -163,6 +326,7 @@ class VendorModel {
       rating: entity.rating,
       totalOrders: entity.totalOrders,
       balance: entity.balance,
+      additionalImages: entity.additionalImages,
     );
   }
 }
