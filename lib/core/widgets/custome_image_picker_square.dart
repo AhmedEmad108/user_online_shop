@@ -8,13 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:user_online_shop/core/utils/backend_endpoint.dart';
 
-class CustomeImagePickerSquare extends StatefulWidget {
-  const CustomeImagePickerSquare(
+class CustomImagePickerSquare extends StatefulWidget {
+  const CustomImagePickerSquare(
       {super.key,
       required this.onFileChanged,
       this.auth = false,
       this.urlImage,
-      this.imageQuality = 50, required this.onFileChanged2});
+      this.imageQuality = 50,
+      required this.onFileChanged2});
   final ValueChanged<String?> onFileChanged;
   final ValueChanged<String?> onFileChanged2;
   final bool auth;
@@ -22,11 +23,11 @@ class CustomeImagePickerSquare extends StatefulWidget {
   final int? imageQuality;
 
   @override
-  State<CustomeImagePickerSquare> createState() =>
-      _CustomeImagePickerSquareState();
+  State<CustomImagePickerSquare> createState() =>
+      _CustomImagePickerSquareState();
 }
 
-class _CustomeImagePickerSquareState extends State<CustomeImagePickerSquare> {
+class _CustomImagePickerSquareState extends State<CustomImagePickerSquare> {
   bool isLoading = false;
   File? imageFile;
   String? url;
